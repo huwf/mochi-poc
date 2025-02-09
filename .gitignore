@@ -1,0 +1,10 @@
+# Pycharm
+.venv
+.idea
+
+# Build stuff
+*.pyc
+
+# Private stuff
+data/
+.env
