@@ -4,6 +4,9 @@
 
 # Build stuff
 *.pyc
+*.egg-info/
+dist/
+build/
 
 # Private stuff
 data/

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dictogloss"
+version = "0.1.0"
+description = "A proof of concept for experimenting with different frameworks in JavaScript and Python."
+authors = [
+    { name = "huwf"}
+]
+
+dependencies = [
+    "setuptools",
+    "wheel",
+    "fastapi[standard]",
+    "asyncpg",
+    "sqlalchemy>=2.0",
+    "pydantic-settings",
+    "sqlmodel",
+    "celery[redis]>=5",
+    "redis"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "black",
+    "isort",
+    "autoflake",
+    "mypy"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.isort]
+known_first_party = "dictogloss"
+profile = "black"
+filter_fields = true
+skip_gitignore = true
+extend_skip = "__init__.py"
+
+[tool.black]
+line-length = 100
+
+[tool.autoflake]
+in-place = true
+remove-all-unused-imports = true
+expand-star-imports = true
+ignore-init-module-imports = true
+
+
